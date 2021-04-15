@@ -14,7 +14,21 @@ spec:
        spec:
           containers:
           - name: hello-py
-            image: wwppk/hello-py:v1
+            image: wwppk/myapp:v1
             ports:
               - name: web 
-                containerPort: 8000
+                containerPort: 80
+#            livenessProbe:
+#              httpGet:
+#                port: 80
+#                path: /myapp/
+#              initialDelaySeconds: 10
+#              periodSeconds: 5
+#              timeoutSeconds: 2
+#            readinessProbe:
+#              httpGet:
+#                port: 80
+#                path: /myapp/health
+#              initialDelaySeconds: 10
+#              periodSeconds: 5
+#              timeoutSeconds: 2
