@@ -17,18 +17,18 @@ spec:
             image: wwppk/myapp:v1
             ports:
               - name: web 
-                containerPort: 80
-#            livenessProbe:
-#              httpGet:
-#                port: 80
-#                path: /myapp/
-#              initialDelaySeconds: 10
-#              periodSeconds: 5
-#              timeoutSeconds: 2
-#            readinessProbe:
-#              httpGet:
-#                port: 80
-#                path: /myapp/health
-#              initialDelaySeconds: 10
-#              periodSeconds: 5
-#              timeoutSeconds: 2
+                containerPort: 8000
+            livenessProbe:
+              httpGet:
+                port: 8000
+                path: /
+              initialDelaySeconds: 5
+              periodSeconds: 3
+              timeoutSeconds: 2
+            readinessProbe:
+              httpGet:
+                port: 8000
+                path: /health
+              initialDelaySeconds: 5
+              periodSeconds: 3
+              timeoutSeconds: 2
